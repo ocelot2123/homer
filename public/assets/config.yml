@@ -71,6 +71,5 @@ services:
     items:
       - name: "Plex"
         logo: "assets/tools/plex.png"
-        tag: "app"
-        url: "https://plex.tv/wen"
+        url: "https://plex.tv/web"
         target: "_blank" # optional html a tag target attribute
