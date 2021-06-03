@@ -11,7 +11,7 @@ header: true
 footer: '<p>Created with <span class="has-text-danger">❤️</span> with <a href="https://bulma.io/">bulma</a>, <a href="https://vuejs.org/">vuejs</a> & <a href="https://fontawesome.com/">font awesome</a> // Fork me on <a href="https://github.com/bastienwirtz/homer"><i class="fab fa-github-alt"></i></a></p>' # set false if you want to hide it.
 
 # Optional theme customization
-theme: default
+theme: dark
 colors:
   light:
     highlight-primary: "#3367d6"
@@ -66,21 +66,46 @@ colors:
 # First level array represent a group.
 # Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
 services:
-  - name: "Applications"
-    icon: "fas fa-cloud"
+  - name: "Media"
+    icon: "fas fa-film"
     items:
       - name: "Plex"
         logo: "assets/tools/plex.png"
+        subtitle: "Media Player"
         url: "https://plex.tv/web"
       - name: "Sonarr"
         logo: "assets/tools/sonarr.png"
+        subtitle: "Shows Collector"
         url: "http://192.168.50.28:8989/"
+      - name: "Sonarr Anime"
+        logo: "assets/tools/sonarr.png"
+        subtitle: "Anime Collector"
+        url: "http://192.168.50.28:8787/"
       - name: "Radarr"
         logo: "assets/tools/radarr.png"
+        subtitle: "Movie Collector"
         url: "http://192.168.50.28:7878/"
+      - name: "Lidarr"
+        logo: "assets/tools/lidarr.png"
+        subtitle: "Music Collector"
+        url: "http://192.168.50.28:8686/"
       - name: "Jackett"
         logo: "assets/tools/jackett.png"
+        subtitle: "Torrent Indexes"
         url: "http://192.168.50.28:9117/"
+
+  - name: "Applcaitions"
+    icon: "fas fa-tv"
+    items:
       - name: "Transmission"
         logo: "assets/tools/transmission.png"
+        subtitle: "Torrent Client"
         url: "http://192.168.50.28:9091/"
+
+  - name: "Admin"
+    icon: "fas fa-user-shield"
+    items:
+      - name: "Netdata"
+        logo: "assets/tools/netdata.png"
+        subtitle: "System Monitor"
+        url: "http://192.168.50.28:19999/"
