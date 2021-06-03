@@ -82,7 +82,7 @@ services:
         subtitle: "Anime Collector"
         url: "http://192.168.50.28:8787/"
       - name: "Radarr"
-        logo: "assets/tools/radarr.png"
+        logo: "assets/tools/radarr_trans.png"
         subtitle: "Movie Collector"
         url: "http://192.168.50.28:7878/"
       - name: "Lidarr"
@@ -98,7 +98,7 @@ services:
     icon: "fas fa-tv"
     items:
       - name: "Transmission"
-        logo: "assets/tools/transmission.png"
+        logo: "assets/tools/transmission_new.png"
         subtitle: "Torrent Client"
         url: "http://192.168.50.28:9091/"
 
@@ -106,6 +106,6 @@ services:
     icon: "fas fa-user-shield"
     items:
       - name: "Netdata"
-        logo: "assets/tools/netdata.png"
+        logo: "assets/tools/netdata_new.png"
         subtitle: "System Monitor"
         url: "http://192.168.50.28:19999/"
