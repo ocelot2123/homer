@@ -109,3 +109,7 @@ services:
         logo: "assets/tools/netdata_new.png"
         subtitle: "System Monitor"
         url: "http://192.168.50.28:19999/"
+      - name: "Pihole"
+        logo: "assets/tools/pihole.png"
+        subtitle: "Network-wide Ad Blocker"
+        url: "http://192.168.50.28:8008/"
