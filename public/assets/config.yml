@@ -94,7 +94,7 @@ services:
         subtitle: "Torrent Indexes"
         url: "http://192.168.50.28:9117/"
 
-  - name: "Applcaitions"
+  - name: "Applications"
     icon: "fas fa-tv"
     items:
       - name: "Transmission"
