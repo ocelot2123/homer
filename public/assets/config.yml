@@ -98,9 +98,13 @@ services:
     icon: "fas fa-tv"
     items:
       - name: "Transmission"
-        logo: "assets/tools/transmission_new.png"
+        logo: "assets/tools/transmission.png"
         subtitle: "Torrent Client"
         url: "http://192.168.50.28:9091/"
+      - name: "FlareSolverr"
+        logo: "assets/tools/flare.png"
+        subtitle: "Cloudflare Solver"
+        url: "http://192.168.50.28:8191/"
 
   - name: "Admin"
     icon: "fas fa-user-shield"
