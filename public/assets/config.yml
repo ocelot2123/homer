@@ -89,10 +89,10 @@ services:
         logo: "assets/tools/lidarr.png"
         subtitle: "Music Collector"
         url: "http://192.168.50.28:8686/"
-      - name: "Jackett"
-        logo: "assets/tools/jackett.png"
+      - name: "Prowlarr"
+        logo: "assets/tools/prowlarr.png"
         subtitle: "Torrent Indexes"
-        url: "http://192.168.50.28:9117/"
+        url: "http://192.168.50.28:9696/"
 
   - name: "Applications"
     icon: "fas fa-tv"
