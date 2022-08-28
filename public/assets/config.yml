@@ -129,5 +129,5 @@ services:
       - name: "Pihole"
         logo: "assets/tools/pihole.png"
         subtitle: "Network-wide Ad Blocker"
-        url: "http://192.168.50.10:8008/"
+        url: "http://192.168.50.10:8008/admin/"
         target: "_blank"
