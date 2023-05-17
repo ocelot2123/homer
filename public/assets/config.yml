@@ -98,11 +98,6 @@ services:
         subtitle: "Torrent Indexes"
         url: "http://192.168.50.10:9696/"
         target: "_blank"
-      - name: "Lidarr"
-        logo: "assets/tools/lidarr.png"
-        subtitle: "Music Collector"
-        url: "http://192.168.50.10:8686/"
-        target: "_blank"
 
   - name: "Applications"
     icon: "fas fa-tv"
