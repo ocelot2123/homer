@@ -132,7 +132,7 @@ services:
         target: "_blank"
       - name: "3D Printer"
         logo: "assets/tools/prusa.png"
-        url: "http://192.168.50.54/"
+        url: "http://192.168.50.134/"
         target: "_blank"
       - name: "Expenses"
         logo: "assets/tools/expenses.png"
