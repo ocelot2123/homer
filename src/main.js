@@ -1,19 +1,14 @@
-import Vue from "vue";
-import App from "./App.vue";
-import "./registerServiceWorker";
-
-import "@fortawesome/fontawesome-free/css/all.css";
-
 import "./assets/app.scss";
+import { createApp, h } from "vue";
+import App from "./App.vue";
 
-Vue.config.productionTip = false;
+const app = createApp(App);
+import Generic from "./components/services/Generic.vue";
 
-Vue.component("DynamicStyle", {
-  render: function (createElement) {
-    return createElement("style", this.$slots.default);
-  },
-});
+app
+  .component("Generic", Generic)
+  .component("DynamicStyle", (_props, context) => {
+    return h("style", {}, context.slots);
+  });
 
-new Vue({
-  render: (h) => h(App),
-}).$mount("#app");
+app.mount("#app-mount");

@@ -1,8 +1,8 @@
 <template>
   <a
-    v-on:click="toggleTheme()"
     aria-label="Toggle dark mode"
     class="navbar-item is-inline-block-mobile"
+    @click="toggleTheme()"
   >
     <i
       :class="`${faClasses[mode]}`"
@@ -15,6 +15,10 @@
 <script>
 export default {
   name: "Darkmode",
+  props: {
+    defaultValue: String,
+  },
+  emits: ["updated"],
   data: function () {
     return {
       isDark: null,
@@ -30,9 +34,21 @@ export default {
     if ("overrideDark" in localStorage) {
       // Light theme is 1 and Dark theme is 2
       this.mode = JSON.parse(localStorage.overrideDark) ? 2 : 1;
+    } else {
+      switch (this.defaultValue) {
+        case "light":
+          this.mode = 1;
+          break;
+        case "dark":
+          this.mode = 2;
+          break;
+        default:
+          this.mode = 0;
+      }
     }
     this.isDark = this.getIsDark();
     this.$emit("updated", this.isDark);
+    this.watchIsDark();
   },
   methods: {
     toggleTheme: function () {
@@ -66,6 +82,16 @@ export default {
         true,
       ];
       return values[this.mode];
+    },
+
+    watchIsDark: function () {
+      matchMedia("(prefers-color-scheme: dark)").addEventListener(
+        "change",
+        () => {
+          this.isDark = this.getIsDark();
+          this.$emit("updated", this.isDark);
+        },
+      );
     },
   },
 };

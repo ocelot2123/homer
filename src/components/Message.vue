@@ -25,11 +25,6 @@ export default {
       message: {},
     };
   },
-  created: async function () {
-    // Look for a new message if an endpoint is provided.
-    this.message = Object.assign({}, this.item);
-    await this.getMessage();
-  },
   computed: {
     show: function () {
       return this.message.title || this.message.content;
@@ -40,6 +35,11 @@ export default {
       this.message = Object.assign({}, item);
     },
   },
+  created: async function () {
+    // Look for a new message if an endpoint is provided.
+    this.message = Object.assign({}, this.item);
+    await this.getMessage();
+  },
   methods: {
     getMessage: async function () {
       if (!this.item) {
@@ -47,14 +47,13 @@ export default {
       }
       if (this.item.url) {
         let fetchedMessage = await this.downloadMessage(this.item.url);
-        console.log("done");
         if (this.item.mapping) {
           fetchedMessage = this.mapRemoteMessage(fetchedMessage);
         }
 
         // keep the original config value if no value is provided by the endpoint
         const message = this.message;
-        for (const prop of ["title", "style", "content"]) {
+        for (const prop of ["title", "style", "content", "icon"]) {
           if (prop in fetchedMessage && fetchedMessage[prop] !== null) {
             message[prop] = fetchedMessage[prop];
           }
@@ -68,12 +67,14 @@ export default {
     },
 
     downloadMessage: function (url) {
-      return fetch(url).then(function (response) {
-        if (response.status != 200) {
-          return;
-        }
-        return response.json();
-      });
+      return fetch(url, { headers: { Accept: "application/json" } }).then(
+        function (response) {
+          if (response.status != 200) {
+            return;
+          }
+          return response.json();
+        },
+      );
     },
 
     mapRemoteMessage: function (message) {
